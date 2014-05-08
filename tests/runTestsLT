@@ -1,0 +1,123 @@
+echo "Testing data structure...\n"
+
+SIDES=16
+
+echo "25 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 25
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "50 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 50
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "75 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 75
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "100 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 100
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "\n\n\n\n"
+
+echo "250 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 250
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "500 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 500
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "750 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 750
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "1000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 1000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "\n\n\n\n"
+
+echo "2500 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 2500
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "5000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 5000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "7500 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 7500
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "10000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 10000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "\n\n\n\n"
+
+echo "10000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 10000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "20000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 20000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "30000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 30000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "40000 Items"
+START=$(./currTime)
+node MasterLT.js $SIDES 40000
+END=$(./currTime)
+TIME=`expr $END - $START`
+echo "-" $TIME "ms\n"
+
+echo "\n\n\n\n"
