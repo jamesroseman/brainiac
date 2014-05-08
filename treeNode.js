@@ -7,8 +7,8 @@ function TreeNode(intervali, intervalj) {
 	this.intervalj = intervalj;
 	this.left = null;
 	this.right = null;
-	this.isLeaf = true;
 	this.data = [];
+	this.tree = null;
 }
 
 // Interval tree node methods
@@ -39,8 +39,14 @@ var isInInterval = function (query, i, j) {
 
 // Interface for TreeNode class
 // Create a new TreeNode
-var newTreeNode = function(intervali, intervalj){
-	return new TreeNode(intervali, intervalj);
+var newTreeNode = function(intervali, intervalj, optData){
+	var retNode = new TreeNode(intervali, intervalj);
+	if (typeof(optData) != 'undefined'){
+		for (var k in optData){
+			retNode[k] = optData[k];
+		}
+	}
+	return retNode;
 };
 
 // Export relevant interface methods

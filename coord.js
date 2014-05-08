@@ -27,9 +27,9 @@ function CloudCoord(latitude, longitude, borders){
 
 // Interface for CloudCoord class
 // Create a new CloudCoord
-var newCloudCoord = function(latitude, longitude, k){
+var newCloudCoord = function(latitude, longitude, k, d){
 	var retCloudCoord = new CloudCoord(latitude, longitude, []);
-	var d = 8.04672; // 5 miles in km
+	// var d = 8.04672; // 5 miles in km
 	var borders = createBorders(latitude, longitude, k, d);
 	for (var i=0; i<borders.length; i++){
 		borders[i] = newCloudCoordBorder(borders[i].lat, borders[i].lon, retCloudCoord);
@@ -96,7 +96,35 @@ LatLon.prototype.destinationPoint = function(brng, dist) {
 	lon2 = (lon2+3*Math.PI) % (2*Math.PI) - Math.PI;  // normalise to -180..+180º
 
 	return new LatLon(lat2.toDeg(), lon2.toDeg());
-}
+};
+/**
+ * Returns the distance from this point to the supplied point, in km 
+ * (using Haversine formula)
+ *
+ * from: Haversine formula - R. W. Sinnott, "Virtues of the Haversine",
+ *       Sky and Telescope, vol 68, no 2, 1984
+ *
+ * @param   {LatLon} point: Latitude/longitude of destination point
+ * @param   {Number} [precision=4]: no of significant digits to use for returned value
+ * @returns {Number} Distance in km between this point and destination point
+ */
+LatLon.prototype.distanceTo = function(point, precision) {
+  // default 4 sig figs reflects typical 0.3% accuracy of spherical model
+  if (typeof precision == 'undefined') precision = 4;
+  
+  var R = this._radius;
+  var lat1 = this._lat.toRad(), lon1 = this._lon.toRad();
+  var lat2 = point._lat.toRad(), lon2 = point._lon.toRad();
+  var dLat = lat2 - lat1;
+  var dLon = lon2 - lon1;
+
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+          Math.cos(lat1) * Math.cos(lat2) * 
+          Math.sin(dLon/2) * Math.sin(dLon/2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = R * c;
+  return d.toPrecisionFixed(precision);
+};
 
 // Create CloudCoordBorders from any given coordinate
 var createBorders = function(latitude, longitude, k, d){
@@ -127,8 +155,6 @@ var createBorders = function(latitude, longitude, k, d){
 module.exports.newCloudCoord = newCloudCoord;
 
 
-
-
 // Class of a coordinate that is a border of a k-cloud
 function CloudCoordBorder(latitude, longitude, centerCoord){
 	this.lat = latitude;
@@ -143,6 +169,3 @@ var newCloudCoordBorder = function(latitude, longitude, centerCoord){
 	return new CloudCoordBorder(latitude, longitude, centerCoord);
 };
 module.exports.newCloudCoordBorder = newCloudCoordBorder;
-
-
-
