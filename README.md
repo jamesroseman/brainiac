@@ -21,18 +21,31 @@ This project was completed for the Comp260 course offered at Tufts University un
 ##usage
 
 > // Include the package
+
 >var lonTree = require('./lonTree');
+
 >
->// Create a new longitude tree
+
+>// Create a new longitude tree 
+
 >var lt = ltp.newLonTree(k,d);
+
 >var tree = lt.tree;
+
 >
+
 >// Add some location points
+
 >tree.add(lat, lon);
+
 >tree.add(lat, lon);
+
 >tree.add(lat, lon);
+
 >
+
 >// Finally, query a coordinate
+
 >tree.query(lat, lon);
 
 
