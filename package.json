@@ -1,0 +1,40 @@
+{
+  "name": "brainiac",
+  "version": "0.10.13",
+  "description": "A computational structure used to efficiently query coordinates against fixed unchanging locations or items.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamesroseman/brainiac"
+  },
+  "keywords": [
+    "proximity",
+    "localization",
+    "cartography",
+    "nearness",
+    "close"
+  ],
+  "author": "James Roseman <me@jamesroseman.com>",
+  "contributors": [
+    {
+      "name": "James Roseman",
+      "email": "me@jamesroseman.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesroseman/brainiac/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "assert": "~1.1.1"
+  }
+}
