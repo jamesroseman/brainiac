@@ -37,6 +37,7 @@ brain.add(41.643112,-88.001369);
 // Query against the structure
 var query = brain.query(41.643155,-88.001322)
 
+// Return queries are of the following format
 query === [
 	{
 		latitude: 41.643112, 
