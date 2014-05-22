@@ -14,9 +14,9 @@ Or, given a fixed distance from some query coordinate, give me all locations.
 
 The `brainiac` structure solves this problem with an augmented BST based on `k`, referring to the k-Gon clouds placed "about" every location coordinate, and `d`, the fixed distance.
 
-The `brainiac` structure uses the <a href="http://en.wikipedia.org/wiki/Haversine_formula">haversine formula</a> to compute distance between coordinates.
+The `brainiac` structure uses the <a target="_blank" href="http://en.wikipedia.org/wiki/Haversine_formula">haversine formula</a> to compute distance between coordinates.
 
-See more at http://www.jamesroseman.com/projects#localization .
+<a href="http://www.jamesroseman.com/projects/#localization">Read more about the project here.</a>
 
 ##usage
 
@@ -73,4 +73,4 @@ O(logn) + O(logn) + O(m)
 
 Where `m` is the average density of these created "interval squares".
 
-<a href="http://www.jamesroseman.com/projects#location-analysis">Read more about the efficiency here...</a>
+<a target="_blank" href="http://www.jamesroseman.com/projects#localization-analysis">Read more about the efficiency here.</a>
