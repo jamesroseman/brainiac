@@ -13,7 +13,7 @@ describe('Brainiac', function(){
 			// testStructure
 			var tS = b.brainiac(8,8.024);
 			tS.add(40.7974,-74.481536);
-			assert.equal(0, tS.query(-33.8600,151.2111).length);
+			assert.equal(0, tS.query(-33.8600,151.2111).length, ['Successfully failed nonvalid query in brainiac structure. [1/1]']);
 		});
 	});
 });

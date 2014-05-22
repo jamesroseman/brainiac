@@ -8,46 +8,41 @@ Many applications answer questions like:
 * How many banks can I walk to within a mile?
 * How many Chipotle restaurants are near my hotel?
 
-These questions are structured as how many X are near Y. 
+These questions are structured as how many Xs are near Y. 
 
 Or, given a fixed distance from some query coordinate, give me all locations.
 
-To answer this question (and solve this problem), I used an augmented binary search tree.
+The `brainiac` structure solves this problem with an augmented BST based on `k`, referring to the k-Gon clouds placed "about" every location coordinate, and `d`, the fixed distance.
 
-See more at http://www.260.jamesroseman.com .
-
-This project was completed for the Comp260 course offered at Tufts University under Greg Aloupis and Andrew Winslow.
+See more at http://www.jamesroseman.com/projects#localization .
 
 ##usage
 
-> // Include the package
+```javascript
+var b = require('brainiac');
+var brain = b.brainiac(k,d);
 
->var lonTree = require('./lonTree');
+// Add coordinates
+brain.add(40.7974,-74.481536);
+brain.add(34.020029,-118.286931);
+brain.add(29.426468,-98.491233);
+brain.add(37.62261,-122.37804);
+brain.add(61.59938,-149.126804);
+brain.add( 39.653671,-104.959502);
+brain.add(47.850015,-122.279457);
+brain.add(52.114942,-106.632519);
+brain.add(47.622767,-122.33668);
+brain.add(41.643112,-88.001369);
 
->
+// Query against the structure
+var query = brain.query(41.643155,-88.001322)
 
->// Create a new longitude tree 
-
->var lt = ltp.newLonTree(k,d);
-
->var tree = lt.tree;
-
->
-
->// Add some location points
-
->tree.add(lat, lon);
-
->tree.add(lat, lon);
-
->tree.add(lat, lon);
-
->
-
->// Finally, query a coordinate
-
->tree.query(lat, lon);
-
-
-
-
+query === [
+	{
+		latitude: 41.643112, 
+		longitude: -88.001369,
+		borders: [...]
+	},
+	...
+]
+```
