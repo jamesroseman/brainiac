@@ -3,14 +3,14 @@ brainiac
 
 NodeJS library for geographic localization using k-gon clouds in fixed distance.
 
-Many applications answer questions like:
-* How many ATMs are within a 5 mile radius from where I am?
-* How many banks can I walk to within a mile?
-* How many Chipotle restaurants are near my hotel?
+Many applications do things like:
+* Give me a list of all the restaurants within 5 miles of where I am.
+* Give me a list of all the markers people have left within a 10 mile radius of where I am.
+* Give me a list of all the photos people have taken within 5 blocks of where I am.
 
-These questions are structured as how many Xs are near Y. 
+These questions are structured as give me a list of all the Xs are near Y. 
 
-Or, given a fixed distance from some query coordinate, give me all locations.
+Or, given a fixed distance from some query coordinate, give me a list of all location coordinates.
 
 The `brainiac` structure solves this problem with an augmented BST based on `k`, referring to the k-Gon clouds placed "about" every location coordinate, and `d`, the fixed distance.
 
